@@ -56,7 +56,6 @@ def random_crop(img_folder='/', save_folder='/', save_header='1_',crop_w = 24, c
         cv2.imwrite(save_path, img_crop)
 
 
-
 def patching(bgr, crop):
     w, h = crop.shape[1], crop.shape[0]
     x = np.random.randint(0, bgr.shape[1] - crop.shape[1])
@@ -65,3 +64,25 @@ def patching(bgr, crop):
     return bgr
 
         
+def extract_frames_from_videos(video_path, save_folder = '/', save_title = '1_', period = 10):
+    cap = cv2.VideoCapture(video_path)
+    # 
+    if (cap.isOpened()==False):
+        print("Error opening video stream of file.")
+
+    # 
+    save_i = 0
+    while(cap.isOpened()):
+        ret, frame = cap.read()
+        if ret==True:
+            if save_i%period==0:
+                cv2.imwrite(save_folder + save_title + str(save_i) + '.png', frame)
+
+            # if cv2.waitKey(25)&0xFF==ord('q'):
+                # break
+            save_i+=1
+        else:
+            break
+
+    cap.release()
+    # cv2.destroyAllWindows()
