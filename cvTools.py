@@ -29,9 +29,6 @@ def _random_resize(bgr):
     
     return output
 
-
-
-
 def random_crop(img_folder='/', save_folder='/', save_header='1_',crop_w = 24, crop_h = 24, num_crop = 10):
     img_names = os.listdir(img_folder)
     clean_img_names = []
@@ -60,6 +57,11 @@ def random_crop(img_folder='/', save_folder='/', save_header='1_',crop_w = 24, c
 
 
 
+def patching(bgr, crop):
+    w, h = crop.shape[1], crop.shape[0]
+    x = np.random.randint(0, bgr.shape[1] - crop.shape[1])
+    y = np.random.randint(0, bgr.shape[0] - crop.shape[0])
+    bgr[y:y+h, x:x+w, :] = crop
+    return bgr
 
-        
         
