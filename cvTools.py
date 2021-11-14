@@ -57,8 +57,6 @@ def random_crop(img_folder='/', save_folder='/', save_header='1_',crop_w = 24, c
         save_path = save_folder + save_header + str(crop_i) + '.png'
         cv2.imwrite(save_path, img_crop)
 
-
-
 def patching(bgr, crop):
     w, h = crop.shape[1], crop.shape[0]
     x = np.random.randint(0, bgr.shape[1] - crop.shape[1])
