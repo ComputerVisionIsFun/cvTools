@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as ET
-import pandas as pd
 import numpy as np
 import random
 import os
@@ -99,7 +98,7 @@ def patching_xml(labeling_main_folder, labeling_sub_folder, bg_folder, bg_name,o
     img_save_path = labeling_main_folder + labeling_sub_folder + save_title + save_img_format
     cv2.imwrite(img_save_path, output)
     xml_save_path = labeling_main_folder + labeling_sub_folder + save_title + '.xml'
-    root.find('filename').text = save_title + '.jpg'
+    root.find('filename').text = save_title + save_img_format
     root.find('path').text = img_save_path
     tree.write(xml_save_path)        
 
