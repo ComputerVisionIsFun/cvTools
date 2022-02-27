@@ -7,7 +7,7 @@ import os
 CROP_WIDTH = 24
 CROP_HEIGHT = 24
 IMG_FOLDER = 'D:/Dataset/Face_detection/bg/'
-NUM_CROP = 100
+NUM_CROP = 125855
 CROP_SAVE_FOLDER = 'D:/Dataset/Face_detection/crop_bg/'
 
 
