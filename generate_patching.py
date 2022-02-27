@@ -2,8 +2,8 @@ import cv2
 import os
 import random
 
-NUM_OBJS = 10
-BG_PATH = 'D:/Dataset/faces_bg/bg/0.png'
+NUM_OBJS = 30
+BG_PATH = 'D:/Dataset/faces_bg/bg/2.png'
 OBJ_IMG_FOLDER = 'D:/Dataset/face/img_align_celeba/24_faces/'
 SAVE_PATH = 'D:/GitHub/light-face-detector/test_imgs/test1.png'
 
